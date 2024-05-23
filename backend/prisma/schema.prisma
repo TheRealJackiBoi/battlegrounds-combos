@@ -13,3 +13,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Hero {
+  id Int @id
+}
+
+model Card {
+  id           Int     @id
+  collectible  Int
+  slug         String
+  Classes Class[]
+}
+
+model Class {
+  id     Int   @id
+  Cards   Card[]
+}
